@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 export interface Todo {
   task: string;
-  prioriy: number;
+  priority: number;
   createAt: number;
 }
 
