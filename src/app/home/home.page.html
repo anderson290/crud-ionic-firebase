@@ -18,14 +18,14 @@
       </div>
 
     </ng-container>
-    
+
     <ion-item-sliding *ngFor="let item of todos">
       <ion-item lines="inset" button [routerLink]="[ '/details', item.id ]">
-       <ion-label>
-         {{item.task}}
-         <p>{{item.createdAt | date:'short'}}</p>
-       </ion-label>
-       <ion-note slot="end" color="primary">{{item.priority}}</ion-note>
+        <ion-label>
+          {{item.task}}
+          <p>{{item.createdAt | date:'short'}}</p>
+        </ion-label>
+        <ion-note slot="end" color="primary">{{item.priority}}</ion-note>
       </ion-item>
       <ion-item-options side="end" (click)="remove(item)" color="secondary">
         Check
@@ -39,4 +39,32 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-item>
+    <ion-input type="text" placeholder="My QR data" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="createCode()">
+    <ion-icon name="barcode"></ion-icon>
+    Create Code
+  </button>
+
+  <button ion-button full icon-left (click)="scanCode()">
+    <ion-icon name="qr-scanner"></ion-icon>
+    Scan Code
+  </button>
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <ion-card-content>
+      <p>Value: {{ createdCode }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Result from Scan: {{ scannedCode }}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

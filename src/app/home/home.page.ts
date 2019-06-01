@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService, Todo } from '../services/todo.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,12 @@ import { TodoService, Todo } from '../services/todo.service';
 })
 export class HomePage implements OnInit{
 
-  todos: Todo[];
-  constructor(private todoService:TodoService) {}
+  qrData = null;
+  createdCode = null;
+  scannedCode = null;
 
+  todos: Todo[];
+  constructor(private todoService:TodoService, private barcodeScanner: BarcodeScanner) {}
 
   ngOnInit(){
     this.todoService.getTodos().subscribe(res=>{
@@ -21,4 +25,15 @@ export class HomePage implements OnInit{
   removeItem(item){
     this.todoService.removeTodo(item.id);
   }
+
+  createCode(){
+    this.createCode = this.qrData;
+  }
+
+  scanCode(){
+    this.barcodeScanner.scan().then(barcodeData =>{
+      this.scannedCode = barcodeData.text;
+    })
+  }
+
 }

@@ -5,13 +5,21 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCpxpdG4PhIe1pzWjAVeTRe6TGHSQfyifo",
+    /*apiKey: "AIzaSyCpxpdG4PhIe1pzWjAVeTRe6TGHSQfyifo",
     authDomain: "crudionic-c94ba.firebaseapp.com",
     databaseURL: "https://crudionic-c94ba.firebaseio.com",
     projectId: "crudionic-c94ba",
     storageBucket: "crudionic-c94ba.appspot.com",
     messagingSenderId: "1049080444888",
-    appId: "1:1049080444888:web:8a5a8f91dcf0744c"
+    appId: "1:1049080444888:web:8a5a8f91dcf0744c"*/
+
+    apiKey: "AIzaSyA3L0TItSLm9_5aD7Ybiy1eFVqJ_L3IdhA",
+    authDomain: "testedispositivos-a93e0.firebaseapp.com",
+    databaseURL: "https://testedispositivos-a93e0.firebaseio.com",
+    projectId: "testedispositivos-a93e0",
+    storageBucket: "testedispositivos-a93e0.appspot.com",
+    messagingSenderId: "268932030529",
+    appId: "1:268932030529:web:45ef8e5399f253fa"
   }
 };
 
