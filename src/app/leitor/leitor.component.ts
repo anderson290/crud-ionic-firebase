@@ -14,7 +14,7 @@ export class LeitorComponent implements OnInit {
   scannedCode = null;
   ngOnInit() {}
   createCode(){
-    this.createCode = this.qrData;
+    this.createdCode = this.qrData;
   }
 
   scanCode(){

@@ -3,15 +3,15 @@
         <ion-input type="text" placeholder="My QR data" [(ngModel)]="qrData">
         </ion-input>
       </ion-item>
-      <button ion-button full icon-left (click)="createCode()">
+      <ion-button ion-button full icon-left (click)="createCode()">
         <ion-icon name="barcode"></ion-icon>
         Create Code
-      </button>
+      </ion-button>
     
-      <button ion-button full icon-left (click)="scanCode()">
+      <ion-button ion-button full icon-left (click)="scanCode()">
         <ion-icon name="qr-scanner"></ion-icon>
         Scan Code
-      </button>
+      </ion-button>
     
       <ion-card *ngIf="createdCode">
         <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
